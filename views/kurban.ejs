@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatil Geri Sayım</title>
+    <link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"/>
+</head>
+<body>
+    <div class="video-background">
+        <video id="background-video" src="/video/gunes.mp4" autoplay muted loop>
+    
+</video>
+<audio id="audio-player" autoplay loop></audio>
+<div class="menu-icon">
+    <i class="fa-regular fa-bars"></i>
+</div>
+<div class="bar">
+    <a href="/" data-short-text="Yaz T.">Yaz Tatili </a>
+    <a href="onbes-tatil" data-short-text="15 T.">15 Tatili</a>
+    <a href="ara-tatil" data-short-text="Ara T.">Ara Tatili</a>
+    <a href="kurban-tatil" data-short-text="Kurban B. T.">Kurban Bayramı Tatili</a>
+</div>
+<div class="bar-pc">
+    <a href="/">Yaz Tatili</a>
+    <a href="onbes-tatil">15 Tatili</a>
+    <a href="ara-tatil">Ara Tatili</a>
+    <a href="kurban-tatil">Kurban Bayramı Tatili</a>
+</div>
+
+
+<div class="timer-wrapper">
+    <div class="timer-circle" id="days-circle">
+        <div class="timer-content">
+            <span class="timer-value" id="days">0</span>
+            <p>GÜN</p>
+        </div>
+    </div>
+    <div class="timer-circle" id="hours-circle">
+        <div class="timer-content">
+            <span class="timer-value" id="hours">0</span>
+            <p>SAAT</p>
+        </div>
+    </div>
+    <div class="timer-circle" id="minutes-circle">
+        <div class="timer-content">
+            <span class="timer-value" id="minutes">0</span>
+            <p>DAKİKA</p>
+        </div>
+    </div>
+    <div class="timer-circle" id="seconds-circle">
+        <div class="timer-content">
+            <span class="timer-value" id="seconds">0</span>
+            <p>SANİYE</p>
+        </div>
+    </div>
+</div>
+    <script src="js/video.js"></script>
+    
+<script src="js/kurban.js"></script>
+</body>
+</html>
