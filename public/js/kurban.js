@@ -27,13 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalMinutes = Math.floor((timeLeft / (1000 * 60)) % 60);
         const totalSeconds = Math.floor((timeLeft / 1000) % 60);
 
-        // Update text content
         daysElement.textContent = totalDays;
         hoursElement.textContent = totalHours;
         minutesElement.textContent = totalMinutes;
         secondsElement.textContent = totalSeconds;
 
-        // Update progress for each circle
         updateProgress(totalDays, 365, 'days');
         updateProgress(totalHours, 24, 'hours');
         updateProgress(totalMinutes, 60, 'minutes');
@@ -43,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateProgress(value, max, unit) {
         const percentage = (value / max) * 100;
 
-        // Define colors for each unit
         const colors = {
             days: '#ffb23e',
             hours: '#ECEFCB',
