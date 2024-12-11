@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     Object.assign(locationDisplay.style, {
         position: 'absolute',
-        top: '10px',
+        top: '11px',
         left: '10px',
         backgroundColor: 'rgba(0, 0, 0, 0.164)',
         backdropFilter: 'blur(20px)',
         padding: '13px 17px',
         color: 'rgba(255, 255, 255, 0.692)',
-        fontSize: '15px',
+        fontSize: '14px',
         cursor: 'pointer',
         fontFamily: 'Arial, sans-serif',
         zIndex: '1000'
@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         locationDisplay.textContent = 'Tarayıcınız konum izinlerini desteklemiyor.';
     }
 
+    let currentWeather = null;
+
     async function handleLocation(position) {
         const { latitude, longitude } = position.coords;
 
@@ -52,7 +54,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (weatherData) {
                 const weather = weatherData.weather[0].main.toLowerCase();
-                playMusicAndChangeVideo(weather);
+                if (currentWeather !== weather) {
+                    currentWeather = weather;
+                    playMusicAndChangeVideo(weather);
+                }
             }
         } catch (error) {
             console.error('Bir hata oluştu:', error);
@@ -105,6 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         const media = mediaMap[weather] || mediaMap.default;
+        
+        document.body.style.opacity = '0';
+
+        videoElement.addEventListener('loadeddata', () => {
+            document.body.style.opacity = '1';
+        }, { once: true });
+
         audioElement.src = media.music;
         videoElement.src = media.video;
 
